@@ -1,0 +1,761 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Шапка */
+header {
+    background: #f8f8f8;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: bold;
+     transition: color 0.3s;
+}
+header nav a:hover {
+    color:#007bff;
+}
+
+
+/* Hero */
+.hero {
+    background-image: url; /* Замените на свое фоновое изображение */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero img {
+   width: 200px;
+   height: auto;
+   border-radius: 50%;
+   margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.hero p{
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* О Преподобном */
+.about{
+    background: #f9f9f9;
+     padding: 50px 0;
+}
+.about h2{
+  text-align: center;
+   margin-bottom: 30px;
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.about-content img {
+    max-width: 40%;
+    height: auto;
+}
+.about-content p{
+      flex: 1;
+}
+/* Маршруты */
+.routes {
+    padding: 50px 0;
+}
+.routes h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.route-card {
+    display: flex;
+    flex-direction: column;
+     text-align: center;
+     border: 1px solid #ddd;
+      padding: 20px;
+        margin-bottom: 20px;
+      border-radius: 8px;
+}
+.route-card img {
+    max-width: 100%;
+    height: auto;
+     border-radius: 8px;
+       margin-bottom: 15px;
+}
+
+/* Галерея */
+.gallery {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+}
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+     object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+
+/* Кнопка */
+.button {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+/* Подвал */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+footer a{
+   color: white;
+    text-decoration: none;
+}
+footer a:hover {
+   text-decoration: underline;
+}
+
+/* Адаптив */
+@media (min-width: 768px) {
+    .route-card {
+         flex-direction: row;
+        text-align: left;
+        align-items: center;
+         gap: 20px;
+    }
+     .route-card img {
+         max-width: 25%;
+     }
+}
+
+@media (min-width: 1024px) {
+   .about-content img{
+     max-width: 30%;
+   }
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
+body {
+    font-family: 'Lora', serif; /*или другой шрифт для основного текста*/
+    /* ...другие стили */
+}
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* или Montserrat для заголовков */
+     /* ...другие стили */
+}
+.logo-text {
+     font-family: 'Playfair Display', serif; /* Или другой шрифт для логотипа */
+    font-size: 1.5rem; /* Отрегулируйте размер шрифта */
+    color: #333; /* Или другой цвет */
+     text-decoration: none;
+      display: inline-block;
+    margin-right: 20px; /* чтобы не прижималось к заголовку */
+}
+ .logo-text:hover{
+     color: #007bff;
+  }
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+.contact-form .form-group {
+    display: block;
+    margin-bottom: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    box-sizing: border-box;
+}
+ .contact-form textarea {
+      resize: both;
+      min-height: 100px;
+ }
+ .contact-form button {
+      margin-top: 10px;
+  }
+#contact .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    transform: translateX(80px);
+}
+
+.reviews-section {
+             width: 100%; /* Занимаем всю ширину */
+             margin-top: 20px;
+        }
+        .reviews-section h3 {
+           color: #2c3e50;
+           text-align: center;
+         }
+        .review {
+            background-color:  rgba(240, 254, 255, 1);
+             padding: 15px;
+             border-radius: 8px;
+             margin-bottom: 15px;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .review p {
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+        .review cite {
+           display: block;
+            text-align: right;
+            font-weight: bold;
+           color: #4a6572;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(105,105,105);
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer {
+    background-color: #f5f5f5; /* Светлый серый фон */
+    padding: 30px 0;
+    color: #333; /* Темно-серый текст */
+    font-family: Arial, sans-serif; /* Шрифты */
+}
+
+footer .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Flexbox для гибкой компоновки */
+    flex-direction: column; /* Размещаем блоки в столбец на мобильных устройствах */
+    align-items: center; /* Выравнивание по центру */
+}
+
+/* Увеличим отступ у основных элементов футера */
+footer .contact-info,
+footer .contact-form-wrapper {
+  margin-bottom: 20px;
+}
+
+footer .contact-info h2 {
+    margin-bottom: 10px;
+    color: #306737; /* Зеленый заголовок */
+    font-size: 24px; /* Размер заголовка */
+}
+
+footer .contact-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+footer .contact-details {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+footer .contact-details li {
+    margin-bottom: 5px;
+}
+
+footer .contact-details a {
+    color: #007bff; /* Синие ссылки */
+    text-decoration: none;
+}
+
+footer .contact-details a:hover {
+    text-decoration: underline;
+}
+
+footer .contact-form-wrapper {
+    width: 100%;
+    max-width: 500px; /* Ограничение ширины формы */
+}
+
+footer .contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .form-group {
+    margin-bottom: 15px;
+}
+
+footer .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+footer .form-group input[type="text"],
+footer .form-group input[type="email"],
+footer .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Тонкая серая рамка */
+    border-radius: 4px;
+    box-sizing: border-box; /* Корректное отображение с padding */
+    font-size: 16px;
+}
+
+footer .form-group textarea {
+    resize: vertical; /* Разрешить вертикальное изменение размера */
+}
+
+footer .button {
+    background-color: #B3E5FC; /* Зеленая кнопка */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+footer .button:hover {
+    background-color: #205020; /* Более темный зеленый цвет при наведении */
+}
+
+footer .copyright-bar {
+    background-color: #ddd; /* Светло-серый фон для copyright-bar */
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer .copyright-bar .container {
+    display: block;
+}
+
+/* Для экранов с шириной от 768px и больше, делаем выравнивание в строку */
+@media (min-width: 768px) {
+    footer .container {
+        flex-direction: row;
+        justify-content: space-between; /* Равномерное распределение пространства */
+        align-items: flex-start; /* Выравнивание по верхнему краю */
+    }
+
+    footer .contact-info {
+      width: 40%;
+      margin-bottom: 0;
+    }
+
+    footer .contact-form-wrapper {
+        width: 55%;
+    }
+}
+header {
+    background-color: #f4f4f9;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+nav a.active {
+    background-color: #0056b3;
+    color: white;
+}
+footer .button {
+    background-color: #B3E5FC; /* Светло-голубой цвет */
+    color: #333; /* Изменил цвет текста на тёмный */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #B3E5FC; /* добавил рамку такого же цвета*/
+}
+
+footer .button:hover {
+    background-color: #e0f7fa; /* Более светлый голубой при наведении */
+    border: 1px solid #e0f7fa; /* Более светлый голубой при наведении*/
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Светлый серый фон */
+}
+header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-text {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+nav a.active {
+    font-weight: bold;
+    color: #007BFF;
+}
+main {
+    padding: 20px;
+}
+.products, .cart {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.product, .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.product:last-child, .cart-item:last-child {
+    border-bottom: none;
+}
+button {
+    background-color: #B3E5FC; /* Светло-голубой цвет кнопки */
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #e0f7fa; /* Более светлый голубой при наведении */
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #B3E5FC; /* Светло-голубой цвет кнопки */
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    text-align: center; /* Центрируем текст внутри кнопки */
+}
+
+.button:hover {
+    background-color: #e0f7fa; /* Более светлый голубой при наведении */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
+.products {
+    margin: 20px;
+}
+
+.product {
+    margin-bottom: 10px;
+}
+
+.quantity-controls input {
+    width: 50px;
+    text-align: center;
+}
+
+.cart {
+    margin: 20px;
+}
+
+.cart-item {
+    margin-bottom: 5px;
+}
+
+#total-price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+body {
+    background-color: #E0F7FA; /* Нежно-голубой цвет фона */
+    margin: 0;
+    font-family: 'Open Sans', sans-serif; /* Пример шрифта, можно изменить */
+}
+
+header {
+    background-color: #fff; /* Белый фон для заголовка */
+    padding: 20px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.route-details {
+    padding: 20px;
+}
+
+.button {
+    background-color: #007BFF; /* Яркий цвет кнопки */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block; /* Для кнопки */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+.copyright-bar {
+    background-color: #fff; /* Белый фон для подвала */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.route-details img {
+    width: 150px; /* Ширина изображения */
+    height: 100px; /* Высота изображения */
+    border-radius: 50%; /* Овальная форма */
+    object-fit: cover; /* Обрезка изображения */
+    display: block;
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+.oval-image {
+    width: 100px; /* Установите желаемую ширину */
+    height: 100px; /* Установите желаемую высоту */
+    border-radius: 50%; /* Овальная форма */
+    object-fit: cover; /* Обрезка изображения, чтобы сохранить пропорции */
+    display: block; /* Центрирование изображения */
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Ширина контейнера для мобильных устройств */
+    }
+
+    header {
+        padding: 10px 0; /* Уменьшение отступов в заголовке */
+    }
+
+    .route-details {
+        padding: 10px; /* Уменьшение отступов в секции маршрутов */
+    }
+
+    .button {
+        width: 100%; /* Кнопка занимает всю ширину */
+        text-align: center; /* Центрирование текста в кнопке */
+        padding: 15px; /* Увеличение отступов для кнопки */
+    }
+
+    .route-details img {
+        width: 100%; /* Изображение занимает всю ширину контейнера */
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+    }
+
+    .oval-image {
+        width: 80px; /* Уменьшение ширины овального изображения */
+        height: 80px; /* Уменьшение высоты овального изображения */
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E0F7FA; /* Нежно-голубой цвет фона */
+}
+
+footer {
+    background-color: #E0F7FA;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column; /* Измените на column для мобильных устройств */
+    align-items: center; /* Центрируем элементы */
+}
+
+.contact-info {
+    margin-bottom: 20px; /* Отступ снизу для контактной информации */
+}
+
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 600px; /* Ограничение ширины формы */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание полей */
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    width: 100%; /* Поля занимают 100% ширины */
+    padding: 10px;
+    box-sizing: border-box; /* Корректное отображение с padding */
+}
+
+.contact-form .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.contact-form .button:hover {
+    background-color: #0056b3;
+}
+
+.copyright-bar {
+    text-align: center;
+    margin-top: 20px;
+}

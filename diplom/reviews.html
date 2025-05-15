@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стопами Преподобного Сергия Радонежского</title>
+    <link rel="stylesheet" href="C:\Users\User\Documents\Горихина МИ-29\СПК\diplom\css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://steamuserimages-a.akamaihd.net/ugc/948467195539993650/83A117F2D462FA3D1EB3CA461302B76B9F25B40D/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true'); background-size: cover; background-position: center; padding: 20px 0;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif; /* Пример шрифта */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Стопами Преподобного Сергия Радонежского</h1>
+        <nav>
+            <a href="index.html" class="active">Главная</a>
+            <a href="about.html">О Преподобном</a>
+            <a href="index.html#routes">Маршруты</a>
+            <a href="index.html#gallery">Галерея</a>
+            <a href="reviews.html">Отзывы</a>
+            <a href="index.html#contact">Контакты</a>
+        </nav>    
+    </div>
+</header>
+
+<!-- Раздел комментариев -->
+<div class="comments-section">
+    <h3>Комментарии</h3>
+
+    <!-- Отображение комментариев -->
+    <div id="commentsList">
+        <!-- Здесь будут отображаться новые комментарии -->
+    </div>
+
+    <!-- Форма добавления комментария -->
+    <form id="commentForm" style="margin-top: 20px;">
+        <div style="margin-bottom: 15px;">
+            <input type="text" id="username" placeholder="Ваше имя" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <textarea id="commentContent" placeholder="Ваш комментарий" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; height: 100px;"></textarea>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>Оцените: </label>
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+            <input type="hidden" id="rating" name="rating" value="0">
+        </div>
+        <button type="submit" style="background-color: #B3E5FC; color: white; padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer;">Отправить</button>
+    </form>
+</div>
+
+<script>
+    // Звезды для оценки
+    const stars = document.querySelectorAll('.star');
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = this.getAttribute('data-value');
+            document.getElementById('rating').value = rating;
+
+            stars.forEach(s => {
+                s.style.color = s.getAttribute('data-value') <= rating ? 'gold' : 'gray';
+            });
+        });
+    });
+
+    const commentsList = document.getElementById('commentsList');
+
+    // Функция для отображения комментариев
+    function displayComments() {
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
+        comments.forEach(comment => {
+            const newComment = createCommentElement(comment.username, comment.content, comment.rating, comment.timestamp);
+            commentsList.appendChild(newComment);
+        });
+    }
+
+    // Создание элемента комментария
+    function createCommentElement(username, content, rating, timestamp) {
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+        newComment.innerHTML = `
+            <p class="comment-author">
+                <a href="/lister/${username}">${username}</a>
+                <span class="comment-timestamp">${timestamp}</span>
+                <span class="comment-rating">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</span>
+            </p>
+            <p class="comment-content">${content}</p>
+        `;
+        return newComment;
+    }
+
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const content = document.getElementById('commentContent').value;
+        const rating = document.getElementById('rating').value;
+        const timestamp = new Date().toLocaleString();
+
+        // Создание и отображение нового комментария
+        const newComment = createCommentElement(username, content, rating, timestamp);
+        commentsList.appendChild(newComment);
+
+        // Сохранение комментария в localStorage
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
+        comments.push({username, content, rating, timestamp});
+        localStorage.setItem('comments', JSON.stringify(comments));
+
+        // Очистка полей после отправки
+        document.getElementById('username').value = '';
+        document.getElementById('commentContent').value = '';
+        document.getElementById('rating').value = 0;
+
+        // Сброс оценок
+        stars.forEach(star => star.style.color = 'gray');
+    });
+
+    // Отображение комментариев при загрузке страницы
+    displayComments();
+</script>
+
+<style>
+    .star {
+        cursor: pointer;
+        font-size: 20px;
+        color: gray;
+    }
+    .comment-rating {
+        margin-left: 10px;
+    }
+</style>
+    <div class="copyright-bar">
+        <p>&copy; 2025
